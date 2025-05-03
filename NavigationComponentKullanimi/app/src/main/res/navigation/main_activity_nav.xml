@@ -28,4 +28,9 @@
             app:argType="integer"
             android:defaultValue="0" />
     </fragment>
+    <fragment
+        android:id="@+id/ayarlarFragment"
+        android:name="com.example.navigationcomponentkullanimi.AyarlarFragment"
+        android:label="fragment_ayarlar"
+        tools:layout="@layout/fragment_ayarlar" />
 </navigation>
