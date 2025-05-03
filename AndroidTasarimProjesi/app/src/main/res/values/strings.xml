@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BMW</string>
+    <string name="arabaAdi"> BMW X3 20d xDrive</string>
+    <string name="arabayakiti">Diesel</string>
+    <string name="arabaTeknik">Techinal Data</string>
+    <string name="guc">Power</string>
+    <string name="gucYazisi">145kW(197HP)</string>
+    <string name="hizlanma">0-100 km/h</string>
+    <string name="hizlanmaBilgisi">7,7 sec.</string>
+    <string name="maxHiz">Vmax</string>
+    <string name="maxHizBilgisi">215 km/h</string>
+    <string name="bilgi1">The new BMW X3 xDrive: Combined WLTP fuel consumption in litres/100 km: 6.5-5.8</string>
+    <string name="bilgi2">It consists of a 145 kW internal combustion engine and an 8 kW electric motor.</string>
+    <string name="fiyat">$55.750</string>
+    <string name="odemeButon">To pay</string>
+
+
+</resources>

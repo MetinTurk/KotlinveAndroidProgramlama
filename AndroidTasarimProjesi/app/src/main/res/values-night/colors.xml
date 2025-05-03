@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    2BAFD3E4
+    <color name="baslikRenk">#403222</color>
+    <color name="baslikArkaPlan">#BF9D7E</color>
+    <color name="yaziRenk1">#756C6C</color>
+    <color name="yaziRenk2">#8C7068</color>
+    <color name="yaziRenk3">#D9C2AD</color>
+    <color name="buttonRenk1">#454549</color>
+    <color name="buttonRenk2">#453D3D</color>
+    <color name="fiyatRenk">#F2F2F2</color>
+    <color name="buyutec">#666060</color>
+
+
+
+</resources>

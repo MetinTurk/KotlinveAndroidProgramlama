@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">BMW</string>
+    <string name="arabaAdi"> BMW X3 20d xDrive</string>
+    <string name="arabayakiti">Dizel</string>
+    <string name="arabaTeknik">Teknik Veriler</string>
+    <string name="guc">Güç</string>
+    <string name="gucYazisi">145kW(197HP)</string>
+    <string name="hizlanma">0-100 km/sa</string>
+    <string name="hizlanmaBilgisi">7,7 sn.</string>
+    <string name="maxHiz">Vmax</string>
+    <string name="maxHizBilgisi">215 km/sa</string>
+    <string name="bilgi1">Yeni BMW X3 20d xDrive: Ortalama WLTP yakıt tüketimi litre/100km: 6,5-5,8, ort.</string>
+    <string name="bilgi2">145 kW gücünde bir içten yanmalı motor ve 8 kW gücünde bir elektrikli motordan oluşuyor.</string>
+    <string name="fiyat">3.199.999TL</string>
+    <string name="odemeButon">Ödemek için</string>
+
+
+</resources>
