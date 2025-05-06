@@ -4,15 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.widgetskullanimi"
+    namespace = "com.example.calismayapisiudemy"
     compileSdk = 35
 
-    buildFeatures{
-        viewBinding = true
-    }
-
     defaultConfig {
-        applicationId = "com.example.widgetskullanimi"
+        applicationId = "com.example.calismayapisiudemy"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
