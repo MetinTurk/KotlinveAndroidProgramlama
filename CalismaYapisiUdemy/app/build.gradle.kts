@@ -7,6 +7,10 @@ android {
     namespace = "com.example.calismayapisiudemy"
     compileSdk = 35
 
+    buildFeatures{
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.example.calismayapisiudemy"
         minSdk = 24
