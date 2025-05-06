@@ -19,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "WidgetsKullanimi"
+rootProject.name = "KisilerUygulamasi"
 include(":app")
+ 
