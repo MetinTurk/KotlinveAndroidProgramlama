@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import com.example.kisileruygulamasi.R
+import com.example.kisileruygulamasi.data.entity.Kisiler
 import com.example.kisileruygulamasi.databinding.FragmentAnasayfaBinding
 
 
@@ -23,7 +24,9 @@ class AnasayfaFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
         }
         binding.buttonDetay.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
+            val kisi = Kisiler(1 , "Sila" , "1111")
+            val gecis = AnasayfaFragmentDirections.kisiDetayGecis(kisi = kisi)
+            Navigation.findNavController(it).navigate(gecis)
         }
 
         return binding.root
