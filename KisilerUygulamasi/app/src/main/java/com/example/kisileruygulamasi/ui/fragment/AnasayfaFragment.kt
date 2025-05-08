@@ -1,14 +1,17 @@
 package com.example.kisileruygulamasi.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.navigation.Navigation
 import com.example.kisileruygulamasi.R
 import com.example.kisileruygulamasi.data.entity.Kisiler
 import com.example.kisileruygulamasi.databinding.FragmentAnasayfaBinding
+import kotlinx.coroutines.newSingleThreadContext
 
 
 class AnasayfaFragment : Fragment() {
@@ -23,9 +26,24 @@ class AnasayfaFragment : Fragment() {
         binding.fab.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
         }
-        
+
+        binding.searchView.setOnQueryTextListener(object  : SearchView.OnQueryTextListener{
+            override fun onQueryTextChange(newText: String): Boolean {//Harf girdikçe ve sildikçe çalışıcak
+                ara(newText)
+                return true
+            }
+
+            override fun onQueryTextSubmit(query: String): Boolean {//Arama buttonuna basılınca
+                ara(query)
+                return true
+            }
+        })
 
         return binding.root
+    }
+
+    fun ara(aramaKelimesi: String){
+        Log.e("Kişi Ara" , aramaKelimesi)
     }
 
 
