@@ -23,11 +23,7 @@ class AnasayfaFragment : Fragment() {
         binding.fab.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
         }
-        binding.buttonDetay.setOnClickListener {
-            val kisi = Kisiler(1 , "Sila" , "1111")
-            val gecis = AnasayfaFragmentDirections.kisiDetayGecis(kisi = kisi)
-            Navigation.findNavController(it).navigate(gecis)
-        }
+        
 
         return binding.root
     }
