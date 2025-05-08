@@ -65,5 +65,10 @@ class AnasayfaFragment : Fragment() {
         Log.e("Kişi Ara" , aramaKelimesi)
     }
 
+    override fun onResume() {
+        super.onResume()
+        Log.e("Kişi Anasayfa","Dönüldü")
+    }
+
 
 }
