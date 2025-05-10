@@ -4,8 +4,7 @@ import android.util.Log
 import com.example.kisileruygulamasi.data.datasource.KisilerDataSource
 import com.example.kisileruygulamasi.data.entity.Kisiler
 
-class KisilerRepository {
-    var kisilerDataSource = KisilerDataSource()
+class KisilerRepository(var kisilerDataSource : KisilerDataSource) {
 
     /*
     suspend fun kaydet(kisi_ad: String,kisi_tel: String){   //veriyi transfer etmemizi sağlar.

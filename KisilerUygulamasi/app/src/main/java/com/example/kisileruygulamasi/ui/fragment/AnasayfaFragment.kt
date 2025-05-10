@@ -18,6 +18,7 @@ import com.example.kisileruygulamasi.databinding.FragmentAnasayfaBinding
 import com.example.kisileruygulamasi.ui.adapter.KisilerAdapter
 import com.example.kisileruygulamasi.ui.viewmodel.AnasayfaViewModel
 import com.example.kisileruygulamasi.ui.viewmodel.KisiKayitViewModel
+import com.example.kisileruygulamasi.utils.gecisYap
 import kotlinx.coroutines.newSingleThreadContext
 import kotlin.getValue
 
@@ -33,7 +34,8 @@ class AnasayfaFragment : Fragment() {
         binding = FragmentAnasayfaBinding.inflate(inflater, container, false)
 
         binding.fab.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
+            //Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)    // aynı işevi görüyor alt satırla
+            Navigation.gecisYap(it,R.id.kisiKayitGecis)
         }
         viewModel.kisilerListesi.observe(viewLifecycleOwner) { //Dinleme
             val kisilerAdapter = KisilerAdapter(requireContext(),it,viewModel)
