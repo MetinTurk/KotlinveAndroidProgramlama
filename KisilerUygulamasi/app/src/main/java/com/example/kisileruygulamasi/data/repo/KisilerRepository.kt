@@ -1,4 +1,17 @@
 package com.example.kisileruygulamasi.data.repo
 
+import android.util.Log
+import com.example.kisileruygulamasi.data.datasource.KisilerDataSource
+
 class KisilerRepository {
+    var kisilerDataSource = KisilerDataSource()
+
+    /*
+    suspend fun kaydet(kisi_ad: String,kisi_tel: String){   //veriyi transfer etmemizi sağlar.
+        kisilerDataSource.kaydet(kisi_ad,kisi_tel)
+    }
+     */
+    suspend fun kaydet(kisi_ad: String,kisi_tel: String)  = kisilerDataSource.kaydet(kisi_ad,kisi_tel)  //sadece bir tane fonks. çalıştırıcaksa böyle kullanabiliriz.
+    suspend  fun guncelle(kisi_id: Int,kisi_ad: String,kisi_tel: String) = kisilerDataSource.guncelle(kisi_id,kisi_ad,kisi_tel)
+    suspend fun sil(kisi_id:Int) = kisilerDataSource.sil(kisi_id)
 }

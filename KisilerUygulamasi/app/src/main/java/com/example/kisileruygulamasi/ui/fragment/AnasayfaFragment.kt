@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.SearchView
+import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -15,11 +16,15 @@ import com.example.kisileruygulamasi.R
 import com.example.kisileruygulamasi.data.entity.Kisiler
 import com.example.kisileruygulamasi.databinding.FragmentAnasayfaBinding
 import com.example.kisileruygulamasi.ui.adapter.KisilerAdapter
+import com.example.kisileruygulamasi.ui.viewmodel.AnasayfaViewModel
+import com.example.kisileruygulamasi.ui.viewmodel.KisiKayitViewModel
 import kotlinx.coroutines.newSingleThreadContext
+import kotlin.getValue
 
 
 class AnasayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnasayfaBinding
+    private  lateinit var  viewModel: AnasayfaViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,7 +44,7 @@ class AnasayfaFragment : Fragment() {
         kisilerListesi.add(k2)
         kisilerListesi.add(k3)
 
-        val kisilerAdapter = KisilerAdapter(requireContext(),kisilerListesi)
+        val kisilerAdapter = KisilerAdapter(requireContext(),kisilerListesi , viewModel)
         binding.kisilerRv.adapter = kisilerAdapter
 
         binding.kisilerRv.layoutManager = LinearLayoutManager(requireContext())   //Genel görünüm
@@ -59,6 +64,12 @@ class AnasayfaFragment : Fragment() {
         })
 
         return binding.root
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val tempViewModel: AnasayfaViewModel by viewModels()
+        viewModel = tempViewModel
     }
 
     fun ara(aramaKelimesi: String){
