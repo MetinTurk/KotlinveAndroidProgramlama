@@ -35,17 +35,11 @@ class AnasayfaFragment : Fragment() {
         binding.fab.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.kisiKayitGecis)
         }
+        viewModel.kisilerListesi.observe(viewLifecycleOwner) { //Dinleme
+            val kisilerAdapter = KisilerAdapter(requireContext(),it,viewModel)
+            binding.kisilerRv.adapter = kisilerAdapter
+        }
 
-        val kisilerListesi = ArrayList<Kisiler>()
-        val k1 = Kisiler(1,"Sila","1903")
-        val k2 = Kisiler(2,"Metin","190303")
-        val k3 = Kisiler(3,"Ata","19031903")
-        kisilerListesi.add(k1)
-        kisilerListesi.add(k2)
-        kisilerListesi.add(k3)
-
-        val kisilerAdapter = KisilerAdapter(requireContext(),kisilerListesi , viewModel)
-        binding.kisilerRv.adapter = kisilerAdapter
 
         binding.kisilerRv.layoutManager = LinearLayoutManager(requireContext())   //Genel görünüm
         //binding.kisilerRv.layoutManager = StaggeredGridLayoutManager(2 , StaggeredGridLayoutManager.VERTICAL)//blok blok sıralama
@@ -53,12 +47,12 @@ class AnasayfaFragment : Fragment() {
 
         binding.searchView.setOnQueryTextListener(object  : SearchView.OnQueryTextListener{
             override fun onQueryTextChange(newText: String): Boolean {//Harf girdikçe ve sildikçe çalışıcak
-                ara(newText)
+                viewModel.ara(newText)
                 return true
             }
 
             override fun onQueryTextSubmit(query: String): Boolean {//Arama buttonuna basılınca
-                ara(query)
+                viewModel.ara(query)
                 return true
             }
         })
@@ -72,13 +66,11 @@ class AnasayfaFragment : Fragment() {
         viewModel = tempViewModel
     }
 
-    fun ara(aramaKelimesi: String){
-        Log.e("Kişi Ara" , aramaKelimesi)
-    }
+
 
     override fun onResume() {
         super.onResume()
-        Log.e("Kişi Anasayfa","Dönüldü")
+        viewModel.kisileriYukle()
     }
 
 
