@@ -19,10 +19,11 @@ import com.example.kisileruygulamasi.ui.adapter.KisilerAdapter
 import com.example.kisileruygulamasi.ui.viewmodel.AnasayfaViewModel
 import com.example.kisileruygulamasi.ui.viewmodel.KisiKayitViewModel
 import com.example.kisileruygulamasi.utils.gecisYap
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.newSingleThreadContext
 import kotlin.getValue
 
-
+@AndroidEntryPoint
 class AnasayfaFragment : Fragment() {
     private lateinit var binding: FragmentAnasayfaBinding
     private  lateinit var  viewModel: AnasayfaViewModel

@@ -1,5 +1,6 @@
 package com.example.kisileruygulamasi.di
 
+import com.example.kisileruygulamasi.data.datasource.KisilerDataSource
 import com.example.kisileruygulamasi.data.repo.KisilerRepository
 import dagger.Module
 import dagger.Provides
@@ -12,8 +13,14 @@ import javax.inject.Singleton
 class AppModule {
     @Provides
     @Singleton
-    fun provideKisilerRepository(): KisilerRepository{
-        return KisilerRepository()
+    fun provideKisilerRepository(kisilerDataSource : KisilerDataSource): KisilerRepository{
+        return KisilerRepository(kisilerDataSource)
+    }
+
+    @Provides
+    @Singleton
+    fun provideKisilerDataSource(): KisilerDataSource{
+        return KisilerDataSource()
     }
 
 
