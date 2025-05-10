@@ -3,6 +3,7 @@ package com.example.flimlerapp
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.flimlerapp.databinding.CardTasarimBinding
 import com.example.flimlerapp.databinding.FragmentAnasayfaBinding
@@ -25,10 +26,16 @@ class FilmlerAdapter(var mContext: Context , val filmlerListesi: List<Filmler>)
         t.imageViewFilm.setImageResource(
             mContext.resources.getIdentifier(film.resim , "drawable" , mContext.packageName)
         )
-        
+
         t.buttonSepet.setOnClickListener {
             Snackbar.make(it, "${film.ad} sepete eklendi" , Snackbar.LENGTH_SHORT).show()
         }
+
+        t.cardViewFilm.setOnClickListener {
+            val gecis = AnasayfaFragmentDirections.detayGecis(filmNesnesi = film)
+            Navigation.findNavController(it).navigate(gecis)
+        }
+
     }
 
     override fun getItemCount(): Int {
