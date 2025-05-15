@@ -1,6 +1,7 @@
 package com.example.kisileruygulamasi.room
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
@@ -16,4 +17,10 @@ interface KisilerDao {//Dao: Database Access Object
 
     @Update
     suspend fun guncelleme(kisi: Kisiler)
+
+    @Delete
+    suspend fun sil(kisi: Kisiler)
+
+    @Query("SELECT * FROM kisiler WHERE kisi_ad LIKE '%' || :aramaKelimesi ||'%'")
+    suspend fun ara(aramaKelimesi: String): List<Kisiler>
 }
