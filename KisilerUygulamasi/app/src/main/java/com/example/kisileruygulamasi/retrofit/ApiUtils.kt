@@ -2,7 +2,10 @@ package com.example.kisileruygulamasi.retrofit
 
 class ApiUtils {
     companion object{
-        val BASE_URL = ""
+        //http://kasimadalan.pe.hu/kisiler/tum_kisiler.php
+        //http://kasimadalan.pe.hu/ -> BASE URL
+        //kisiler/tum_kisiler.php -> API URL
+        val BASE_URL = "http://kasimadalan.pe.hu/"
 
         fun getKisilerDao() : KisilerDao{//her tablo için hem fonks. hemde interface oluşturmamız gerekiyor
             return RetrofitClient.getClient(BASE_URL).create(KisilerDao :: class.java)
